@@ -13,7 +13,14 @@ COPY . .
 RUN mkdir -p /app/data
 
 # Expose the port FastAPI runs on
+<<<<<<< HEAD
 EXPOSE 7500
 
 # Start the application
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7500"]
+=======
+EXPOSE 8000
+
+# Start the application
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+>>>>>>> 5ce62a3 (first commit)
