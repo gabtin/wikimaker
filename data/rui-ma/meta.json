@@ -1,0 +1,21 @@
+{
+  "name": "Rui Ma",
+  "slug": "rui-ma",
+  "sources": [
+    {
+      "label": "https://www.youtube.com/watch?v=9xf6sk60jUc",
+      "hash": "b7938e8ab44c9da6",
+      "added": "2026-02-17T09:50:40.943985+00:00"
+    }
+  ],
+  "settings": {
+    "purpose": "personal_reference",
+    "granularity": "standard",
+    "voice_preservation": "medium",
+    "page_depth": "standard",
+    "critical_lens": "descriptive",
+    "focus_areas": "",
+    "link_density": "moderate"
+  },
+  "created": "2026-02-17T09:50:32.998264+00:00"
+}

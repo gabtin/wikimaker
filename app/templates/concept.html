@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — {{ author_name }} — WikiMaker{% endblock %}
+{% block content %}
+<div style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+    <a href="/{{ author_slug }}/">&larr; {{ author_name }}</a>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <h1 class="page-title" style="border-bottom: none; margin-bottom: 0; flex: 1;">{{ title }}</h1>
+    <a href="/{{ author_slug }}/edit/{{ concept_slug }}" class="btn btn-secondary" style="margin-left: 1rem; white-space: nowrap;">Edit</a>
+</div>
+<div style="border-bottom: 1px solid var(--border); margin-bottom: 1rem;"></div>
+
+<div class="meta-box">
+    <dl>
+        <dt>Author</dt>
+        <dd><a href="/{{ author_slug }}/">{{ author_name }}</a></dd>
+        <dt>Sources</dt>
+        <dd>{{ sources | join(', ') }}</dd>
+        <dt>Last updated</dt>
+        <dd>{{ last_updated[:10] if last_updated else 'Unknown' }}</dd>
+        {% if tags %}
+        <dt>Tags</dt>
+        <dd>
+            {% for t in tags %}
+            <a href="/{{ author_slug }}/search?tag={{ t }}" class="tag">{{ t }}</a>
+            {% endfor %}
+        </dd>
+        {% endif %}
+    </dl>
+</div>
+
+<div class="wiki-content">
+    {{ content_html | safe }}
+</div>
+{% endblock %}

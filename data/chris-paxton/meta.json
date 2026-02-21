@@ -1,0 +1,56 @@
+{
+  "name": "Chris Paxton",
+  "slug": "chris-paxton",
+  "sources": [
+    {
+      "label": "How to Fake A Robotics Result",
+      "hash": "153b684dc9f158fd",
+      "added": "2026-02-16T15:00:20.459153+00:00"
+    },
+    {
+      "label": "How do We Quantify Progress in Robotics?",
+      "hash": "7be89fc1d1f165c8",
+      "added": "2026-02-16T15:07:05.494255+00:00"
+    },
+    {
+      "label": "How Human Should Your Humanoid Be?",
+      "hash": "40cd4f0d3639db85",
+      "added": "2026-02-16T15:13:48.328729+00:00"
+    },
+    {
+      "label": "Robot Soldiers Are Reporting For Duty",
+      "hash": "6e020a50df62ec6f",
+      "added": "2026-02-16T15:19:22.800958+00:00"
+    },
+    {
+      "label": "Where the Horses Went",
+      "hash": "fe2a692924b33f22",
+      "added": "2026-02-16T15:23:50.386428+00:00"
+    },
+    {
+      "label": "Why Not Everything is Automated in Manufacturing (Yet)",
+      "hash": "ced1b59ceb0a4eb5",
+      "added": "2026-02-16T15:31:51.925488+00:00"
+    },
+    {
+      "label": "Paper Notes: Nested Learning",
+      "hash": "a694a9c79a99de6c",
+      "added": "2026-02-16T15:38:24.665753+00:00"
+    },
+    {
+      "label": "https://www.youtube.com/watch?v=pwGI527luV8",
+      "hash": "5e8dcfcae799c482",
+      "added": "2026-02-16T15:59:43.071074+00:00"
+    }
+  ],
+  "settings": {
+    "purpose": "study_guide",
+    "granularity": "broad",
+    "voice_preservation": "high",
+    "page_depth": "brief",
+    "critical_lens": "analytical",
+    "focus_areas": "Robotics, Hardware, AI, Data",
+    "link_density": "dense"
+  },
+  "created": "2026-02-16T14:59:02.077005+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Peter Fenton",
+  "slug": "peter-fenton",
+  "sources": [
+    {
+      "label": "https://www.youtube.com/watch?v=mPxB1oeAIIc",
+      "hash": "3cfa568d1b3fefcd",
+      "added": "2026-02-19T23:56:43.816110+00:00"
+    },
+    {
+      "label": "https://www.youtube.com/watch?v=mPxB1oeAIIc",
+      "hash": "3cfa568d1b3fefcd",
+      "added": "2026-02-20T19:11:32.214055+00:00"
+    }
+  ],
+  "settings": {
+    "purpose": "personal_reference",
+    "granularity": "standard",
+    "voice_preservation": "medium",
+    "page_depth": "standard",
+    "critical_lens": "descriptive",
+    "focus_areas": "",
+    "link_density": "moderate"
+  },
+  "created": "2026-02-19T23:56:35.852808+00:00"
+}

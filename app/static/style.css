@@ -1,0 +1,303 @@
+/* Wikipedia-inspired minimal CSS */
+:root {
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --border: #a2a9b1;
+    --text: #202122;
+    --text-muted: #54595d;
+    --link: #0645ad;
+    --link-visited: #0b0080;
+    --link-hover: #3366bb;
+    --accent: #eaecf0;
+    --header-bg: #f6f6f6;
+    --max-width: 960px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:visited { color: var(--link-visited); }
+a:hover { text-decoration: underline; color: var(--link-hover); }
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+header h1 a { color: var(--text); }
+header h1 a:hover { text-decoration: none; }
+
+header nav a {
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Main content */
+main {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+h1.page-title {
+    font-size: 1.8rem;
+    font-weight: normal;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Wiki content */
+.wiki-content h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.2rem;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.wiki-content h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 1rem 0 0.4rem;
+}
+
+.wiki-content p { margin: 0.5rem 0; }
+
+.wiki-content blockquote {
+    border-left: 3px solid var(--border);
+    padding: 0.25rem 1rem;
+    margin: 0.75rem 0;
+    color: var(--text-muted);
+    background: var(--header-bg);
+}
+
+.wiki-content ul, .wiki-content ol {
+    margin: 0.5rem 0 0.5rem 2rem;
+}
+
+.wiki-content code {
+    background: var(--accent);
+    padding: 0.1rem 0.3rem;
+    font-size: 0.9em;
+}
+
+/* Concept index */
+.concept-list {
+    list-style: none;
+    columns: 2;
+    column-gap: 2rem;
+}
+
+.concept-list li {
+    padding: 0.25rem 0;
+    break-inside: avoid;
+}
+
+/* Source list */
+.source-list {
+    list-style: none;
+    margin: 0.5rem 0;
+}
+
+.source-list li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--accent);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Forms */
+.form-group {
+    margin: 1rem 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.field-help {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 0.4rem;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--surface);
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: var(--link);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.btn:hover { background: var(--link-hover); color: #fff; text-decoration: none; }
+.btn:visited { color: #fff; }
+
+.btn-danger { background: #c33; }
+.btn-danger:hover { background: #a00; color: #fff; }
+.btn-danger:visited { color: #fff; }
+
+.btn-secondary {
+    background: var(--header-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover { background: var(--accent); color: var(--text); }
+.btn-secondary:visited { color: var(--text); }
+
+/* Metadata sidebar */
+.meta-box {
+    background: var(--header-bg);
+    border: 1px solid var(--accent);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.meta-box dt { font-weight: bold; margin-top: 0.4rem; }
+.meta-box dd { margin-left: 0; color: var(--text-muted); }
+
+/* Spinner */
+.spinner {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid var(--accent);
+    border-top-color: var(--link);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.processing-msg {
+    padding: 1rem;
+    background: var(--header-bg);
+    border: 1px solid var(--accent);
+    margin: 1rem 0;
+}
+
+/* Author cards on home page */
+.author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.author-card {
+    border: 1px solid var(--accent);
+    padding: 1rem;
+    background: var(--header-bg);
+}
+
+.author-card h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+.author-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Tabs for URL / Text input */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-bottom: -1px;
+    font-size: 0.95rem;
+    background: none;
+    font-family: inherit;
+}
+
+.tab.active {
+    border-color: var(--border);
+    background: var(--surface);
+    border-bottom: 1px solid var(--surface);
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Tags */
+.tag { display: inline-block; background: var(--accent); padding: 0.15rem 0.5rem;
+       font-size: 0.8rem; border-radius: 2px; margin: 0.1rem 0.2rem; color: var(--text-muted); }
+.tag:hover { background: var(--border); text-decoration: none; color: var(--text); }
+.tag:visited { color: var(--text-muted); }
+.tag.active { background: var(--link); color: #fff; }
+.tag.active:visited { color: #fff; }
+
+/* Search bar */
+.search-bar { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.search-bar input[type="text"] { flex: 1; padding: 0.5rem; border: 1px solid var(--border); font-family: inherit; font-size: 0.95rem; }
+
+/* Editor actions */
+.editor-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1rem;
+}

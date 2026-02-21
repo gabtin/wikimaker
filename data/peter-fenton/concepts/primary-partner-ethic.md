@@ -1,0 +1,20 @@
+---
+author: peter-fenton
+last_updated: '2026-02-20T08:39:06.121361+00:00'
+sources:
+- https://www.youtube.com/watch?v=mPxB1oeAIIc
+title: Primary Partner Ethic
+---
+
+The **Primary Partner Ethic** is a venture capital partnership model articulated by investor Peter Fenton, defined by a firm's commitment to occupying a central, multi-faceted role in its portfolio companies. This ethic emphasizes being the "primary partner, board partner, lead investor, first investor, principal investor, principal believer in the mission." It represents a holistic approach to investing, where the firm seeks deep, aligned relationships rather than transactional deals, particularly when engaging with emerging and transformative technologies like artificial intelligence.
+
+## Defining Roles and Commitments
+At its core, the Primary Partner Ethic is an ensemble of interdependent roles that together signal an all-in commitment. As the **primary partner**, the firm positions itself as the most trusted and actively involved stakeholder, transcending the traditional investor role. This is intrinsically linked to being the **board partner**, providing strategic oversight and governance through a seat on the company's board. The roles of **lead investor** and **first investor** denote operational and temporal leadership—the firm orchestrates the investment round and enters at the earliest stage to demonstrate foundational confidence. Crucially, the terms **principal investor** and **principal believer** underscore a philosophical alignment with the company's vision. Fenton encapsulates this integrated stance:
+> "we decided we wanted to be in business with companies where that ethic of being the primary partner, board partner, lead investor, first investor, principal investor, principal believer in the mission is how we wanted to practice investing in AI at that time."
+This framework ensures the partnership is built on a [[Shared Mission]] dynamic, with the firm acting as a co-pilot rather than a passive funder.
+
+## Strategic Application in Frontier Technology
+The ethic is strategically employed when navigating new technological waves, such as AI, where uncertainty is high and success often depends on visionary execution. In these contexts, Fenton's firm adopted the Primary Partner Ethic as a deliberate practice. The approach acknowledges that pioneering fields require capital partners who are willing to embrace risk and provide unwavering support through the challenges of innovation. By committing to be the "principal believer," the firm aligns its reputation and resources with the entrepreneur's long-term mission from the outset. This selective, deep-engagement model is designed to build a competitive advantage in high-stakes environments, fostering a level of trust and collaboration that is essential for navigating [[Paradigm Shift]] technologies. It shapes the firm's entire entry strategy into a new sector, ensuring partnerships are formed with a mindset geared toward intensive collaboration.
+
+## Operational and Relational Impact
+Implementing the Primary Partner Ethic significantly influences a firm's operational practices. It necessitates a highly selective investment thesis, focusing on a smaller number of companies to allow for substantial involvement in each. This model often involves leading financing rounds and securing board positions as a standard, which facilitates sustained strategic input and support. The ethic fosters relationships characterized by high bandwidth communication and a [[Long-Term Orientation]], moving beyond quarterly reviews to embedded partnership. While resource-intensive, this approach aims to create unparalleled alignment between investor and founder, potentially de-risking ventures in volatile sectors and increasing the likelihood of outlier outcomes. Fenton's framing presents the ethic not just as a strategy but as a foundational philosophy for venture practice.

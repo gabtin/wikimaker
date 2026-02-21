@@ -1,0 +1,25 @@
+How to Fake A Robotics Result
+Since that deadline is coming up
+Sometimes, you need to raise a round for your robotics startup and the training run just didn’t go so well. Or maybe the CoRL deadline is a week away and the results just aren’t there. Never fear; you have options. Follow this guide and everything will work out just fine.
+Let’s discuss how to make your model look as good as possible.
+Don’t let other people run comparisons. Remember what happened with Llama 4: if other people can try your model out, they’ll quickly uncover its limitations. If you can keep your model secret, that’s best.
+Control the environment of your demo carefully. Lighting, objects, initial robot configuration, and so on. This lets you overfit the demo scene and get really nice, smooth, high quality motions.
+Never show your failures. This one might seem obvious — why would I show failures? — but if people can see where your model fails, they can start to see the limits of what you can do. Only strong robotics papers and results can show failures with confidence.
+If you have to let other people run comparisons, choose the people carefully. Make sure they’re only happening in the right circumstances, ones your model supports as roughly in distribution. Absolutely don’t do what Physical Intelligence or NVIDIA do and open source your model so anyone can benchmark it.
+When working on the results section of your research paper or blog post, you may be tempted to include some baselines. This is a good idea; just be careful to choose weak baselines so you look good. Octo is a great choice here; it was well publicized but had lots of limitations that weren’t widely discussed.
+On the same note: cherry-pick your benchmarks. There are a ton of robotics benchmarks out there, and they all test subtly different things. Importantly, these differences are not obvious to people who are not familiar with the benchmarks involved.
+Now, you may be thinking: “Chris, this is all great advice; but people will call me out if I follow these rules.” Don’t worry about that. There are so many little things which influence robotics performance: camera placement, arm configuration, object diversity, low-level controller implementation, and so on.
+As long as you can make an argument your setup has to be slightly different from everyone else’s, you can get away with a lot. For example; a benchmark I like is RLBench, which turns out to be a very difficult one for many VLAs, and many successful methods on this benchmark instead use motion planning together with a higher-level goal prediction model.
+Second, as a result of the above, robotics benchmarking standards are quite low relative to other areas of machine learning. Papers from very famous roboticists get away with these things all the time, and they’re under much more scrutiny than you are. You’ll be fine.
+What to Look For In a Strong Robotics Release
+Open source code and models. Not always possible, but always welcome.
+Very diverse scenes and environments. Modern robotics learning methods are very, very good at overfitting to a small task distribution — a clean table, objects at most a few centimeters from where they started.
+Don’t be afraid to show failures. We all know robotics methods fail a lot; showing these is a strong signal, and also helps qualify where it works and where it doesn’t.
+Compare against the current best methods. Pick the best models head-to-head with embodiments and benchmarks they report on. Don’t cherry-pick.
+On the same note, I think paper reviewers must be accepting of some results which aren’t as good as other methods; it must be allowable to fail at some benchmarks, or people will cherry-pick.
+Some Caveats
+Almost all of the robotics videos and results you see are, I believe, real — in that they’re doing exactly what the creators say they are. The problem is that because it’s so easy to overfit to a particular scene, and because the limitations of a model are so hard to ascertain from a 30 second clip, it’s really hard to tell whether a team is making progress toward the underlying goal of general-purpose embodied intelligence.
+And robotics is hard; just because a team is employing some of the tricks I wrote here does not mean their results are invalid or their model is weak. I am certainly guilty of them all, at one time or another! One of the fundamental issues with robotics projects is that there are so many things that influence performance, that it’s very hard to distinguish the signal from the noise.
+On the same note: lots of machine learning researchers from other fields don’t understand how hard robotics benchmarking is. They will often insist on building their own, usually simulated, benchmarks, which invariably don’t tell us anything and just add more options for #6.
+In the end, robotics benchmarking will be solved by having lots and lots of robots, and models that actually work across most of them. More projects like Lingbot-VLA, DreamZero, and pi-0.5 — models that people can actually try out on different robots, use, and openly compare.
+I wrote about evaluation a bit in the past, and will surely do so again:

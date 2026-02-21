@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Search — {{ meta.name }} — WikiMaker{% endblock %}
+{% block content %}
+<div style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+    <a href="/{{ meta.slug }}/">&larr; {{ meta.name }}</a>
+</div>
+
+<h1 class="page-title">Search</h1>
+
+<form class="search-bar" action="/{{ meta.slug }}/search" method="get">
+    <input type="text" name="q" value="{{ q }}" placeholder="Search concepts...">
+    <button type="submit" class="btn">Search</button>
+</form>
+
+{% if all_tags %}
+<div style="margin-bottom: 1rem;">
+    {% for t in all_tags %}
+    <a href="/{{ meta.slug }}/search?tag={{ t }}" class="tag{% if t == active_tag %} active{% endif %}">{{ t }}</a>
+    {% endfor %}
+    {% if active_tag %}
+    <a href="/{{ meta.slug }}/search?q={{ q }}" class="tag" style="font-style: italic;">clear filter</a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if q or active_tag %}
+<p style="color: var(--text-muted); margin-bottom: 1rem;">
+    {{ results|length }} result{{ 's' if results|length != 1 else '' }}
+    {% if q %}for "{{ q }}"{% endif %}
+    {% if active_tag %}tagged "{{ active_tag }}"{% endif %}
+</p>
+
+{% if results %}
+<ul class="concept-list" style="columns: 1;">
+    {% for r in results %}
+    <li style="margin-bottom: 0.5rem;">
+        <a href="/{{ meta.slug }}/{{ r.slug }}">{{ r.title }}</a>
+        {% for t in r.tags %}
+        <a href="/{{ meta.slug }}/search?tag={{ t }}" class="tag">{{ t }}</a>
+        {% endfor %}
+        <span style="color: var(--text-muted); font-size: 0.8rem;">— {{ r.sources|length }} source{{ 's' if r.sources|length != 1 else '' }}</span>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p style="color: var(--text-muted);">No results found.</p>
+{% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Add Source — {{ meta.name }} — WikiMaker{% endblock %}
+{% block content %}
+<div style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+    <a href="/{{ meta.slug }}/">&larr; {{ meta.name }}</a>
+</div>
+
+<h1 class="page-title">Add Source</h1>
+
+<p>Add a URL (Substack, blog post, article), a YouTube video, or paste raw text to extract concepts for {{ meta.name }}'s wiki.</p>
+
+<div class="tabs">
+    <button class="tab active" onclick="switchTab('url')">URL</button>
+    <button class="tab" onclick="switchTab('youtube')">YouTube</button>
+    <button class="tab" onclick="switchTab('text')">Raw Text</button>
+</div>
+
+<div id="tab-url" class="tab-content active">
+    <form method="post" action="/{{ meta.slug }}/add" id="url-form">
+        <input type="hidden" name="source_type" value="url">
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input type="url" id="url" name="url" placeholder="https://example.substack.com/p/article-title" required>
+        </div>
+        <button type="submit" class="btn"
+                hx-post="/{{ meta.slug }}/add"
+                hx-target="#result"
+                hx-indicator="#processing">
+            Process URL
+        </button>
+    </form>
+</div>
+
+<div id="tab-youtube" class="tab-content">
+    <form method="post" action="/{{ meta.slug }}/add" id="youtube-form">
+        <input type="hidden" name="source_type" value="youtube">
+        <div class="form-group">
+            <label for="youtube_url">YouTube URL</label>
+            <input type="url" id="youtube_url" name="youtube_url" placeholder="https://www.youtube.com/watch?v=..." required>
+        </div>
+        <button type="submit" class="btn"
+                hx-post="/{{ meta.slug }}/add"
+                hx-target="#result"
+                hx-indicator="#processing">
+            Process YouTube Video
+        </button>
+    </form>
+</div>
+
+<div id="tab-text" class="tab-content">
+    <form method="post" action="/{{ meta.slug }}/add" id="text-form">
+        <input type="hidden" name="source_type" value="text">
+        <div class="form-group">
+            <label for="raw_text">Text</label>
+            <textarea id="raw_text" name="raw_text" placeholder="Paste the author's text here..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="text_label">Source label (optional)</label>
+            <input type="text" id="text_label" name="text_label" placeholder="e.g. Essay on startups">
+        </div>
+        <button type="submit" class="btn"
+                hx-post="/{{ meta.slug }}/add"
+                hx-target="#result"
+                hx-indicator="#processing">
+            Process Text
+        </button>
+    </form>
+</div>
+
+<div id="processing" class="processing-msg htmx-indicator">
+    <span class="spinner"></span> Processing source... This may take a minute or two.
+</div>
+
+<div id="result"></div>
+
+<script>
+function switchTab(tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+{% endblock %}

@@ -1,0 +1,2 @@
+[console_scripts]
+wikimaker = app.cli:main

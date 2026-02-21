@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Settings — {{ meta.name }} — WikiMaker{% endblock %}
+{% block content %}
+<div style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+    <a href="/{{ meta.slug }}/">&larr; {{ meta.name }}</a>
+</div>
+
+<h1 class="page-title">Wiki Settings</h1>
+
+<p>These settings control how concepts are extracted, how pages are written, and how they link together. Changes apply to new sources you add — existing pages are not regenerated.</p>
+
+<form method="post" action="/{{ meta.slug }}/settings">
+
+    <div class="form-group">
+        <label for="purpose">Wiki Purpose</label>
+        <p class="field-help">What is this wiki for?</p>
+        <select id="purpose" name="purpose">
+            <option value="personal_reference" {{ 'selected' if settings.purpose == 'personal_reference' }}>Personal Reference — key ideas to look up later</option>
+            <option value="study_guide" {{ 'selected' if settings.purpose == 'study_guide' }}>Study Guide — build understanding step by step</option>
+            <option value="research_map" {{ 'selected' if settings.purpose == 'research_map' }}>Research Map — map intellectual contributions and positions</option>
+            <option value="explain_to_others" {{ 'selected' if settings.purpose == 'explain_to_others' }}>Explain to Others — make ideas accessible to newcomers</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="granularity">Concept Granularity</label>
+        <p class="field-help">How fine-grained should concept extraction be?</p>
+        <select id="granularity" name="granularity">
+            <option value="broad" {{ 'selected' if settings.granularity == 'broad' }}>Broad — 3-7 major themes per source</option>
+            <option value="standard" {{ 'selected' if settings.granularity == 'standard' }}>Standard — 5-15 distinct concepts per source</option>
+            <option value="fine" {{ 'selected' if settings.granularity == 'fine' }}>Fine-grained — 10-25 specific ideas, arguments, and distinctions</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="voice_preservation">Author Voice Preservation</label>
+        <p class="field-help">How much of the author's original language and style to keep?</p>
+        <select id="voice_preservation" name="voice_preservation">
+            <option value="low" {{ 'selected' if settings.voice_preservation == 'low' }}>Low — neutral, encyclopedic paraphrasing</option>
+            <option value="medium" {{ 'selected' if settings.voice_preservation == 'medium' }}>Medium — key terminology preserved, with explanation</option>
+            <option value="high" {{ 'selected' if settings.voice_preservation == 'high' }}>High — preserve the author's exact phrasing and rhetorical style</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="page_depth">Page Depth</label>
+        <p class="field-help">How long and detailed should each concept page be?</p>
+        <select id="page_depth" name="page_depth">
+            <option value="brief" {{ 'selected' if settings.page_depth == 'brief' }}>Brief — 150-300 words, quick reference</option>
+            <option value="standard" {{ 'selected' if settings.page_depth == 'standard' }}>Standard — 300-600 words, balanced coverage</option>
+            <option value="comprehensive" {{ 'selected' if settings.page_depth == 'comprehensive' }}>Comprehensive — 600-1200 words, thorough analysis</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="critical_lens">Critical Lens</label>
+        <p class="field-help">How should the wiki engage with the author's ideas?</p>
+        <select id="critical_lens" name="critical_lens">
+            <option value="descriptive" {{ 'selected' if settings.critical_lens == 'descriptive' }}>Descriptive — faithfully represent the author's thinking</option>
+            <option value="analytical" {{ 'selected' if settings.critical_lens == 'analytical' }}>Analytical — identify assumptions, implications, and connections</option>
+            <option value="critical" {{ 'selected' if settings.critical_lens == 'critical' }}>Critical — note strengths, weaknesses, tensions, and blind spots</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="focus_areas">Focus Areas</label>
+        <p class="field-help">Comma-separated topics to prioritize (leave blank for no bias).</p>
+        <input type="text" id="focus_areas" name="focus_areas" value="{{ settings.focus_areas }}" placeholder="e.g. technology, ethics, economics">
+    </div>
+
+    <div class="form-group">
+        <label for="link_density">Link Density</label>
+        <p class="field-help">How aggressively should concepts be cross-linked?</p>
+        <select id="link_density" name="link_density">
+            <option value="minimal" {{ 'selected' if settings.link_density == 'minimal' }}>Minimal — only strong, direct relationships</option>
+            <option value="moderate" {{ 'selected' if settings.link_density == 'moderate' }}>Moderate — meaningful connections</option>
+            <option value="dense" {{ 'selected' if settings.link_density == 'dense' }}>Dense — generous linking, include thematic adjacency</option>
+        </select>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+        <button type="submit" class="btn">Save Settings</button>
+        <a href="/{{ meta.slug }}/" class="btn btn-secondary" style="margin-left: 0.5rem;">Cancel</a>
+    </div>
+</form>
+{% endblock %}

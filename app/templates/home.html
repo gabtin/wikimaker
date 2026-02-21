@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}WikiMaker — Home{% endblock %}
+{% block content %}
+<h1 class="page-title">Author Wikis</h1>
+
+<p>WikiMaker creates Wikipedia-style interlinked knowledge wikis from an author's writing.</p>
+
+{% if authors %}
+<div class="author-grid">
+    {% for author in authors %}
+    <div class="author-card">
+        <h3><a href="/{{ author.slug }}/">{{ author.name }}</a></h3>
+        <p>{{ author.sources | length }} source{{ 's' if author.sources | length != 1 }} added</p>
+        <form method="post" action="/{{ author.slug }}/delete" onsubmit="return confirm('Delete the entire {{ author.name }} wiki? This cannot be undone.')">
+            <button type="submit" class="btn btn-danger">Delete Wiki</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p style="color: var(--text-muted); margin: 1rem 0;">No wikis yet. Create one below.</p>
+{% endif %}
+
+<h2 style="margin-top: 2rem;">Create New Wiki</h2>
+<form method="post" action="/create">
+    <div class="form-group">
+        <label for="author_name">Author Name</label>
+        <input type="text" id="author_name" name="author_name" placeholder="e.g. Paul Graham" required>
+    </div>
+    <button type="submit" class="btn">Create Wiki</button>
+</form>
+{% endblock %}

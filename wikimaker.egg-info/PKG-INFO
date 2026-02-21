@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: wikimaker
+Version: 0.1.0
+Requires-Python: >=3.11
+Requires-Dist: fastapi==0.115.6
+Requires-Dist: uvicorn==0.34.0
+Requires-Dist: jinja2==3.1.5
+Requires-Dist: trafilatura==2.0.0
+Requires-Dist: httpx==0.28.1
+Requires-Dist: python-frontmatter==1.1.0
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: markdown==3.7
+Requires-Dist: python-multipart==0.0.20
+Requires-Dist: youtube-transcript-api==1.2.4
